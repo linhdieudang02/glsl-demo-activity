@@ -12,8 +12,6 @@ out vec4 fragColor;
 //TODO: Add sampler and an input variable for the interpolated texture coordinate
 
 
-in vec2 interpTexCoord;
-
 
 void main() {
 
