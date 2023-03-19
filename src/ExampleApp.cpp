@@ -77,10 +77,10 @@ void ExampleApp::onRenderGraphicsContext(const VRGraphicsState &renderState) {
         cpuVertexArray.push_back(vert);
         cpuIndexArray.push_back(2);
         
-        const int numVertices = cpuVertexArray.size();
+        const int numVertices = (int)cpuVertexArray.size();
         const int cpuVertexByteSize = sizeof(Mesh::Vertex) * numVertices;
-        const int cpuIndexByteSize = sizeof(int) * cpuIndexArray.size();
-        _mesh.reset(new Mesh(textures, GL_TRIANGLES, GL_STATIC_DRAW, cpuVertexByteSize, cpuIndexByteSize, 0, cpuVertexArray, cpuIndexArray.size(), cpuIndexByteSize, &cpuIndexArray[0]));
+        const int cpuIndexByteSize = sizeof(int) * (int)cpuIndexArray.size();
+        _mesh.reset(new Mesh(textures, GL_TRIANGLES, GL_STATIC_DRAW, cpuVertexByteSize, cpuIndexByteSize, 0, cpuVertexArray, (int)cpuIndexArray.size(), cpuIndexByteSize, &cpuIndexArray[0]));
         
         _tex = Texture::create2DTextureFromFile("tex.jpg");
         
