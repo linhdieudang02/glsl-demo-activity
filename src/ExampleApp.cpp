@@ -114,8 +114,8 @@ void ExampleApp::onRenderGraphicsScene(const VRGraphicsState &renderState) {
     _shader.setUniform("normalMatrix", view * transpose(inverse(model)));
     
     //TODO: Bind texture
-    
-    
+    _tex->bind( 0 );
+    _shader. setUniform( "colorSampler", 0 );
     
     
     // Draw the mesh
